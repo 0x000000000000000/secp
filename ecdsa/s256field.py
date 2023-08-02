@@ -3,6 +3,7 @@ import point
 import unittest
 import hashlib
 import hmac
+from random import randint
 A = 0
 B = 7
 P = 2**256 - 2**32 - 977
@@ -109,7 +110,9 @@ class PrivateKey:
 
 class TestS256Point(unittest.TestCase):
     def test_point(self):
+        print(randint(0, N))
 
+        pk = PrivateKey(randint(0, N))
         # h = N/n
         # G = hP
         s1 = S256Point(
